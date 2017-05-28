@@ -1,0 +1,8 @@
+<input #box (keyup.enter)="add(box.value)" (blur)="add(box.value)" >
+<button (click)="add(box.value)">add</button>
+<ul>
+  <li *ngFor="let hero of heroes">
+    {{hero}}
+  </li>
+</ul>
+<p *ngIf="heroes.length > 3">more heroes</p>
