@@ -3,33 +3,32 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { CrisisModule } from './crisis-center/crisis.module';
 import { FormsModule } from '@angular/forms';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { HeroService } from './hero.service';
-import { HeroesComponent } from './heroes/heroes.component';
 import { RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { InMemoryDataService } from './in-memory-data.service';
 import { HttpModule } from '@angular/http';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HeroSearchComponent } from './heroes/hero-search/hero-search.component';
+import { HeroesModule } from './heroes/heroes.module';
+import { InMemoryDataService } from './heroes/in-memory-data.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroDetailComponent,
-    HeroesComponent,
-    DashboardComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule, // <!--import the FormsModule before binding with [(ngModel)]
-    AppRoutingModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    HeroesModule,
+    CrisisModule,
+    AppRoutingModule
   ],
   providers: [
-    HeroService
   ],
   bootstrap: [AppComponent]
 })

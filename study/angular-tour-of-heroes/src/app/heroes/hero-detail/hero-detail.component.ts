@@ -1,4 +1,4 @@
-import { Hero } from '../hero';
+import { Hero } from './../hero';
 import { HeroService } from '../hero.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
@@ -18,6 +18,9 @@ export class HeroDetailComponent implements OnInit {
   constructor(private heorService: HeroService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
+    //    const id = this.route.snapshot.params['id'];
+    //    this.heorService.getHero2(id).subscribe(r => this.hero = r);
+
     this.route.params
       .switchMap((value: Params) => this.heorService.getHero2(value['id']))
       .subscribe(r => this.hero = r);
