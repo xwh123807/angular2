@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CrisisCenterHomeComponent } from './crisis-center-home.component';
+import { ComposeMessageComponent } from './compose-message.component';
 
-describe('CrisisCenterHomeComponent', () => {
-  let component: CrisisCenterHomeComponent;
-  let fixture: ComponentFixture<CrisisCenterHomeComponent>;
+describe('ComposeMessageComponent', () => {
+  let component: ComposeMessageComponent;
+  let fixture: ComponentFixture<ComposeMessageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CrisisCenterHomeComponent ]
+      declarations: [ ComposeMessageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CrisisCenterHomeComponent);
+    fixture = TestBed.createComponent(ComposeMessageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

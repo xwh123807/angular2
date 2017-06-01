@@ -11,6 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CrisisListComponent implements OnInit {
   selectedId: number;
 
+  crisises: Crisis[];
+
   constructor(private service: CrisisService,
     private route: ActivatedRoute,
     private router: Router) { }
@@ -21,5 +23,9 @@ export class CrisisListComponent implements OnInit {
   onSelect(crisis: Crisis) {
     this.selectedId = crisis.id;
     this.router.navigate([crisis.id], { relativeTo: this.route });
+  }
+
+  isSelected(crisis: Crisis): boolean {
+    return crisis.id === this.selectedId;
   }
 }

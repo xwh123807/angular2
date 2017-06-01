@@ -1,5 +1,5 @@
 <ul class="items">
-	<li *ngFor="let crisis of crisises | async">
+	<li *ngFor="let crisis of crisises">
 		<a [routerLink]="crisis.id" [class.selected]="isSelected(crisis)">
 			<span class="badge">{{crisis.id}}</span>
 			{{crisis.name}}

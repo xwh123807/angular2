@@ -11,8 +11,8 @@ export class CrisisService {
   ];
 
   constructor() { }
-  
-  getCrisis() : Crisis[] {
+
+  getCrisis(): Crisis[] {
     return this.CRISIS;
   }
 }
