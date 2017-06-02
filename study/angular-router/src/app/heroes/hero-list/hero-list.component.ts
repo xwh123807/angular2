@@ -1,6 +1,6 @@
 import { Hero, HeroService } from '../hero.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -18,6 +18,11 @@ export class HeroListComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+
+    this.heroes = this.route.params.switchMap((params: Params) => {
+      this.selectedId = params['id'];
+      return this.service.getHeroes();
+    });
   }
 
   isSelected(hero: Hero) {

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ActivatedRoute, Router, Params } from '@angular/router';
 import { HeroListComponent } from './hero-list.component';
+import { HeroService } from '../hero.service';
 
 describe('HeroListComponent', () => {
   let component: HeroListComponent;
@@ -8,9 +9,24 @@ describe('HeroListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeroListComponent ]
+      declarations: [HeroListComponent],
+      providers: [
+        HeroService,
+        {
+          provider: ActivatedRoute,
+          useValue: {
+
+          }
+        },
+        {
+          provider: Router,
+          useValue: {
+
+          }
+        }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -23,3 +39,7 @@ describe('HeroListComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+export class Test {
+
+}
