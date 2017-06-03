@@ -1,7 +1,7 @@
 <h2>HEROES</h2>
-<ul>
-	<li *ngFor="let hero of heroes | async" (click)="onSelect(hero)" [class.selected]="isSelected(hero)">
-		<span>{{hero.id}}</span>{{hero.name}}
+<ul class="list-group">
+	<li class="list-group-item" *ngFor="let hero of heroes | async" (click)="onSelect(hero)" [class.selected]="isSelected(hero)">
+		<span class="badge">{{hero.id}}</span>{{hero.name}}
 	</li>
 </ul>
 

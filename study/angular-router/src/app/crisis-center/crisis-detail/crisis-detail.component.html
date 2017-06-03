@@ -1,13 +1,14 @@
 <div *ngIf="crisis">
 	<h3>{{editName}}</h3>
-	<div>
+	<div class="form-group">
 		<label>Id: </label>{{crisis.id}}
 	</div>
-	<div>
-		<label>Name: </label> <input [(ngModel)]="editName" placeholder="name" />
+	<div class="form-group">
+		<label>Name: </label> 
+		<input class="from-control" [(ngModel)]="editName" placeholder="name" />
 	</div>
 	<p>
-		<button (click)="save()">Save</button>
-		<button (click)="cancel()">Cancel</button>
+		<button (click)="save()" class="btn btn-default">Save</button>
+		<button (click)="cancel()" class="btn">Cancel</button>
 	</p>
 </div>

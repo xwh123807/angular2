@@ -1,9 +1,18 @@
 
+import { ComposeMessageComponent } from './compose-message/compose-message.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: 'compose', component: ComposeMessageComponent, outlet:'popup' },
+  { path: '', redirectTo: '/heroes', pathMatch: 'full' },
+  { path: '**', component: NotFoundComponent }
+];
+
 @NgModule({
   imports: [
-    RouterModule.forRoot([])
+    RouterModule.forRoot(appRoutes)
   ],
   exports: [
     RouterModule

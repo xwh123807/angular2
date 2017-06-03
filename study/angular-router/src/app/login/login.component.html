@@ -1,0 +1,6 @@
+<h2>LOGIN</h2>
+<p>{{message}}</p>
+<p>
+	<button (click)="login()" [disabled]="authService.isLoggedIn">Login</button>
+	<button (click)="logout()" [disabled]="!authService.isLoggedIn">Logout</button>
+</p>
